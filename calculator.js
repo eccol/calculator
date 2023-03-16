@@ -1,3 +1,11 @@
+let display = '';
+
+const buttons = document.querySelectorAll('.digit, .operator');
+buttons.forEach((btn) => btn.addEventListener('click', () => {
+  display += btn.id;
+  document.querySelector('.result').textContent = display;
+}))
+
 function add(a, b) {
   return a + b;
 }
