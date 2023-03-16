@@ -21,6 +21,7 @@ operators.forEach((btn) => btn.addEventListener('click', () => {
 document.querySelector('.equals').addEventListener('click', () => {
   b = Number(display);
   result = operate(a, b, op);
+  a = result;
   display = result;
 })
 
@@ -50,10 +51,12 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+  if (b === 0) return '😒';
   return a / b;
 }
 
 function operate(a, b, operator) {
+  if (!operator) return b;
   if (operator === '+') return add(a, b);
   if (operator === '-') return subtract(a, b);
   if (operator === '*') return multiply(a, b);
