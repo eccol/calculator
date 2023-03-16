@@ -33,9 +33,16 @@ document.querySelector('.clear').addEventListener('click', () => {
   op = '';
 })
 
-// This has to stay at the end of the event listeners so it updates *after* the selection
-document.querySelectorAll('button').forEach((btn) => {
-  btn.addEventListener('click', () => { document.querySelector('.result').textContent = display })
+// This display update has to stay at the end of the event listeners so it updates *after* the selection
+document.querySelectorAll('button:not(.operator)').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    resultBox = document.querySelector('.result')
+    if (!display) {
+      resultBox.textContent = 0;
+    } else {
+      resultBox.textContent = display
+    }
+  })
 })
 
 function add(a, b) {
