@@ -25,12 +25,15 @@ document.querySelector('.equals').addEventListener('click', () => {
   display = result;
 })
 
-// When clear clicked, clear the display and empty the variables
 document.querySelector('.clear').addEventListener('click', () => {
   display = '';
   a = 0;
   b = 0;
   op = '';
+})
+
+document.querySelector('.backspace').addEventListener('click', () => {
+  display = display.slice(0, -1);
 })
 
 // This display update has to stay at the end of the event listeners so it updates *after* the selection
