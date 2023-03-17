@@ -6,7 +6,7 @@ let b = 0;
 // When digit clicked, append to display
 const buttons = document.querySelectorAll('.digit');
 buttons.forEach((btn) => btn.addEventListener('click', () => {
-  display += btn.id;
+  if (display.length < 10) display += btn.id;
 }))
 
 // When operator clicked, save previous number and operator
@@ -28,8 +28,16 @@ operators.forEach((btn) => btn.addEventListener('click', () => {
 document.querySelector('.equals').addEventListener('click', () => {
   b = Number(display);
   result = operate(a, b, op);
-  a = result;
-  display = result;
+  if (toString(result).length < 10) {
+    a = result;
+    display = result;
+  }
+  else {
+    display = "overflow";
+    a = 0;
+    b = 0;
+    op = ''
+  }
 })
 
 document.querySelector('.clear').addEventListener('click', () => {
