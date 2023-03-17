@@ -1,8 +1,12 @@
 body {
   font-size: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
+  margin: 40px;
+  width: 550px;
   display: flex;
   flex-direction: column;
 }
@@ -13,8 +17,14 @@ body {
   align-items: center;
 }
 
+.result-container {
+  margin: 40px 10px;
+  border: solid 1px black;
+}
+
 .button-container {
   display: flex;
+  justify-content: center;
 }
 
 button {
@@ -24,8 +34,9 @@ button {
   margin: 10px;
 }
 
-.equals {
-  width: 160px;
+.equals,
+.zero {
+  width: 180px;
   height: 80px;
 }
 
@@ -37,4 +48,5 @@ button {
 .functions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: end;
 }
