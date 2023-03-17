@@ -10,8 +10,15 @@ buttons.forEach((btn) => btn.addEventListener('click', () => {
 }))
 
 // When operator clicked, save previous number and operator
+// OR if already operator, run equals first
 operators = document.querySelectorAll('.operator');
 operators.forEach((btn) => btn.addEventListener('click', () => {
+  if (op) {
+    b = Number(display);
+    result = operate(a, b, op);
+    display = result;
+    document.querySelector('.result').textContent = display;
+  }
   a = Number(display);
   op = btn.id;
   display = '';
