@@ -28,7 +28,7 @@ operators.forEach((btn) => btn.addEventListener('click', () => {
 document.querySelector('.equals').addEventListener('click', () => {
   b = Number(display);
   result = operate(a, b, op);
-  if (toString(result).length < 10) {
+  if (result.toString().length < 10) {
     a = result;
     display = result;
   }
