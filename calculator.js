@@ -19,8 +19,10 @@ buttons.forEach((btn) => btn.addEventListener('click', () => {
 // OR if already operator, run equals first
 operators = document.querySelectorAll('.operator');
 operators.forEach((btn) => btn.addEventListener('click', () => {
-  b = Number(display);
-  a = operate(a, b, op);
+  if (prev != 'equals') {
+    b = Number(display);
+    a = operate(a, b, op);
+  }
   op = btn.id;
 
   if (!a) a = b;
